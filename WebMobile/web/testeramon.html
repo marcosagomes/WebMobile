@@ -5,105 +5,163 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-  <head>
-    <title>Testezinho</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-  </head>
-  <body>
-    
-    <!--Container do menu principal-->
-    <div class="container">
-      
-      <!--Menu principal-->
-      <div class="ui blue menu borderless inverted secondary">
-        
-        <!--Item de menu-->
-        <div class="item">
-          
-          <!--Logo da imagem-->
-          <div class="ui logo shape">
-            <img class="ui tiny image" src="src/img/image.png"/>
-          </div>
+    <head>
+        <title>Testezinho</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    </head>
+    <body>
+
+        <!--Container do menu principal-->
+        <div class="container">
+
+            <!--Menu principal-->
+            <div class="ui blue menu borderless inverted secondary">
+
+                <!--Item de menu-->
+                <div class="item">
+
+                    <!--Logo da imagem-->
+                    <div class="ui logo shape">
+                        <img class="ui tiny image" src="src/img/image.png"/>
+                    </div>
+                </div>
+
+                <!--Titulo do site-->
+                <div class="item">
+                    <h1 class="title">
+                        eDraftstore
+                    </h1>
+                </div>
+
+                <!--Itens a direita-->
+                <div class="right menu">
+
+                    <div class="item">
+                        <div class="ui icon input">
+                            <input type="text" placeholder="Buscar...">
+                            <i class="search link icon"></i>
+                        </div>
+                    </div>
+
+                    <!--Utilizar o item abaixo para quando o usuario ESTIVER LOGADO-->
+                    <!--          <a class="ui item">
+                                <div class="column">
+                                  <i class="user icon"></i>
+                                  Perfil
+                                </div>
+                              </a>-->
+
+                    <!--Utilizar o item abaixo para quando o usuario NÃO ESTIVER LOGADO-->
+                    <a class="ui item">
+                        <div class="column">
+                            <i class="sign in icon"></i>
+                            Login ou Cadastre-se
+                        </div>
+                    </a>
+
+                    <!--Item do carrinho de compras-->
+                    <a class="ui item">
+                        <div class="ui green column">
+
+                            <!--Icone do carrinho-->
+                            <i class="cart icon"></i>
+
+                            <!--Texto do carrinho-->
+                            Carrinho
+
+                            <!--Label da quantidade de itens adicionados ao carrinho-->
+                            <div class="ui label">2</div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            <!--Fim menu principal-->
         </div>
-        
-        <!--Titulo do site-->
-        <div class="item">
-          <h1 class="title">
-            eDraftstore
-          </h1>
+        <!--Fim container menu principal-->
+
+        <!--Menu das categorias-->
+        <div class="container">
+            <nav class="ui labeled icon borderless menu centered grid inverted green secondary">
+                <a class="item">
+                    <i class="desktop icon"></i>Computadores montados
+                </a>
+                <a class="item">
+                    <i class="laptop icon"></i>Notebooks
+                </a>
+                <a class="item">
+                    <i class="keyboard icon"></i>Componentes de hardware
+                </a>
+                <a class="item">
+                    <i class="game icon"></i>Acessórios gamer
+                </a>
+                <a class="item">
+                    <i class="plug icon"></i>Periféricos
+                </a>
+            </nav>
         </div>
 
-        <!--Itens a direita-->
-        <div class="right menu">
-          
-          <div class="item">
-            <div class="ui icon input">
-              <input type="text" placeholder="Buscar...">
-              <i class="search link icon"></i>
+        <div class="ui segment">
+            <h2 class="ui leaf floated header">Televisores</h2>
+            <div class="ui clearing divider"></div>
+            <div clas="cards">
+                <div class="ui special cards">
+                    <div class="card">
+                        <div class="blurring dimmable image">
+                            <div class="ui dimmer">
+                                <div class="content"> <!-- Aqui começa outro card -->
+                                    <div class="center">
+                                        <div class="ui inverted button">+ Detalhes</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="imagens/produtos/tv.jpg">
+                        </div>
+                        <div class="content">
+                            <a class="header">Smart TV LED 3D Ultra HD/4k Curva 55</a>
+                            <br>
+                            <div class="text">
+                                <p >R$ 4.500 </p>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <a>
+                                <i class="right cart icon"></i>
+                                Adicionar ao carrinho
+                            </a>
+                        </div>
+                    </div> <!-- Aqui termina o card -->
+                    <div class="card"> <!-- Aqui começa outro card -->
+                        <div class="blurring dimmable image">
+                            <div class="ui inverted dimmer">
+                                <div class="content">
+                                    <div class="center">
+                                        <div class="ui primary button">+ Detalhes</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="imagens/produtos/tv.jpg">
+                        </div>
+                        <div class="content">
+                            <a class="header">Smart TV LED 3D Ultra HD/4k Curva 55</a>
+                            <br>
+                            <div class="text">
+                                <p >R$ 4.500 </p>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <a>
+                                <i class="right cart icon"></i>
+                                Adicionar ao carrinho
+                            </a>
+                        </div>
+                    </div> <!-- Aqui termina o card -->
+                </div> 
             </div>
-          </div>
-          
-          <!--Utilizar o item abaixo para quando o usuario ESTIVER LOGADO-->
-<!--          <a class="ui item">
-            <div class="column">
-              <i class="user icon"></i>
-              Perfil
-            </div>
-          </a>-->
-
-          <!--Utilizar o item abaixo para quando o usuario NÃO ESTIVER LOGADO-->
-          <a class="ui item">
-            <div class="column">
-              <i class="sign in icon"></i>
-              Login ou Cadastre-se
-            </div>
-          </a>
-          
-          <!--Item do carrinho de compras-->
-          <a class="ui item">
-            <div class="ui green column">
-              
-              <!--Icone do carrinho-->
-              <i class="cart icon"></i>
-              
-              <!--Texto do carrinho-->
-              Carrinho
-              
-              <!--Label da quantidade de itens adicionados ao carrinho-->
-              <div class="ui label">2</div>
-            </div>
-          </a>
-          
-        </div>
-      </div>
-      <!--Fim menu principal-->
-    </div>
-    <!--Fim container menu principal-->
-    
-    <!--Menu das categorias-->
-    <div class="container">
-      <nav class="ui labeled icon borderless menu centered grid inverted green secondary">
-        <a class="item">
-            <i class="desktop icon"></i>Computadores montados
-        </a>
-        <a class="item">
-            <i class="laptop icon"></i>Notebooks
-        </a>
-        <a class="item">
-            <i class="keyboard icon"></i>Componentes de hardware
-        </a>
-        <a class="item">
-            <i class="game icon"></i>Acessórios gamer
-        </a>
-        <a class="item">
-            <i class="plug icon"></i>Periféricos
-        </a>
-    </nav>
-    </div>
-    
-    
-
-  </body>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="semantic/dist/semantic.js"></script>
+            <script src="js/funcoes-jquery.js"></script>
+    </body>
 </html>
