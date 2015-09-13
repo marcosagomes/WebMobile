@@ -10,6 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="src/css/testecard.css">
     </head>
     <body>
 
@@ -17,14 +18,14 @@ and open the template in the editor.
         <div class="container">
 
             <!--Menu principal-->
-            <div class="ui blue menu borderless inverted secondary">
+            <div class="ui teal menu borderless inverted secondary">
 
                 <!--Item de menu-->
                 <div class="item">
 
                     <!--Logo da imagem-->
                     <div class="ui logo shape">
-                        <img class="ui tiny image" src="src/img/image.png"/>
+                        <img class="ui tiny image" src="imagens/logo/image.png"/>
                     </div>
                 </div>
 
@@ -84,7 +85,7 @@ and open the template in the editor.
 
         <!--Menu das categorias-->
         <div class="container">
-            <nav class="ui labeled icon borderless menu centered grid inverted green secondary">
+            <nav class="ui labeled small icon borderless menu centered grid inverted grey secondary">
                 <a class="item">
                     <i class="desktop icon"></i>Computadores montados
                 </a>
@@ -110,23 +111,23 @@ and open the template in the editor.
                 <div class="ui special cards">
                     <div class="card">
                         <div class="blurring dimmable image">
-                            <div class="ui dimmer">
+                            <div class="ui inverted dimmer">
                                 <div class="content"> <!-- Aqui começa outro card -->
                                     <div class="center">
-                                        <div class="ui inverted button">+ Detalhes</div>
+                                        <div class="ui primary button">+ Detalhes</div>
                                     </div>
                                 </div>
                             </div>
-                            <img src="imagens/produtos/tv.jpg">
+                            <img class="ui tiny image" src="imagens/produtos/tv.jpg">
                         </div>
                         <div class="content">
                             <a class="header">Smart TV LED 3D Ultra HD/4k Curva 55</a>
                             <br>
                             <div class="text">
-                                <p >R$ 4.500 </p>
+                                <p>R$ 4.500 </p>
                             </div>
                         </div>
-                        <div class="extra content">
+                        <div class="extra content center aligned">
                             <a>
                                 <i class="right cart icon"></i>
                                 Adicionar ao carrinho
@@ -138,7 +139,7 @@ and open the template in the editor.
                             <div class="ui inverted dimmer">
                                 <div class="content">
                                     <div class="center">
-                                        <div class="ui primary button">+ Detalhes</div>
+                                        <div class="ui primary button">Ver detalhes</div>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +152,7 @@ and open the template in the editor.
                                 <p >R$ 4.500 </p>
                             </div>
                         </div>
-                        <div class="extra content">
+                        <div class="extra content center aligned">
                             <a>
                                 <i class="right cart icon"></i>
                                 Adicionar ao carrinho
@@ -162,6 +163,6 @@ and open the template in the editor.
             </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
             <script src="semantic/dist/semantic.js"></script>
-            <script src="js/funcoes-jquery.js"></script>
+            <script src="src/js/funcoes-jquery.js"></script>
     </body>
 </html>
