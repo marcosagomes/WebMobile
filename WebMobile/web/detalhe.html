@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <style>
+        img{
+            width: 100px;
+            height: 100px; //A altura tem de ser fixa
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+    </style>
+    <head>
+        <title>eDraftstore teste</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    </head>
+    <body>
+
+        <!--Container do menu principal-->
+        <div class="container">
+            <!--Menu principal-->
+            <div class="ui teal menu borderless inverted secondary">
+
+                <!--Item de menu-->
+                <div class="item">
+                    <!--Logo da imagem-->
+                    <div class="ui logo shape">
+                        <img class="ui tiny image" src="imagens/logo/image.png"/>
+                    </div>
+                </div>
+
+                <!--Titulo do site-->
+                <div class="item">
+                    <h1 class="title">
+                        eDraftstore
+                    </h1>
+                </div>
+
+                <!--Itens a direita-->
+                <div class="right menu">
+
+                    <!--Barra de pesquisa-->
+                    <div class="item">
+                        <div class="ui icon input">
+                            <input type="text" placeholder="Buscar...">
+                            <i class="search link icon"></i>
+                        </div>
+                    </div>
+
+                    <!--Utilizar o item abaixo para quando o usuario ESTIVER LOGADO-->
+                    <!--          <a class="ui item">
+                                <div class="column">
+                                  <i class="user icon"></i>
+                                  Minha conta
+                                </div>
+                              </a>-->
+
+                    <!--Utilizar o item abaixo para quando o usuario NÃO ESTIVER LOGADO-->
+                    <a class="ui item">
+                        <div class="column">
+                            <i class="sign in icon"></i>
+                            Login ou Cadastre-se
+                        </div>
+                    </a>
+
+                    <!--Item do carrinho de compras-->
+                    <a id="linkCarrinho" class="ui item">
+                        <div class="ui column">
+
+                            <!--Icone do carrinho-->
+                            <i class="cart icon"></i>
+
+                            <!--Texto do carrinho-->
+                            Carrinho
+
+                            <!--Label da quantidade de itens adicionados ao carrinho-->
+                            <div id="labelCarrinho" class="ui label hidden">0</div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            <!--Fim menu principal-->
+        </div>
+        <!--Fim container menu principal-->
+
+        <!--Menu das categorias-->
+        <div class="container">
+            <nav class="ui labeled small icon borderless menu centered grid inverted grey secondary">
+                <a class="item">
+                    <i class="desktop icon"></i>Computadores montados
+                </a>
+                <a class="item">
+                    <i class="laptop icon"></i>Notebooks
+                </a>
+                <a class="item">
+                    <i class="disk outline icon"></i>Componentes de hardware
+                </a>
+                <a class="item">
+                    <i class="game icon"></i>Acessórios para games
+                </a>
+                <a class="item">
+                    <i class="plug icon"></i>Periféricos
+                </a>
+            </nav>
+        </div>
+
+        <!--Segmento Ofertas da Semana-->
+        <div class="ui segment borderless"> 
+
+            <!--Header-->
+            <h2 class="ui header center aligned">
+                <div class='ui big fluid label'>
+                    <i class="star icon"></i>
+                    Ofertas da semana
+                </div>
+            </h2>
+
+            <img class="ui medium rounded image" src="imagens/produtos/processadori7.jpg">
+            
+            <table class="ui very padded table">
+            <thead>
+                <tr>
+                    <th>Características do produto</th>
+                    <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>Approved</td>
+                    
+                </tr>
+                <tr>
+                    <td>Jamie</td>
+                    <td>Approved</td>
+                   
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Denied</td>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+        
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="semantic/dist/semantic.js"></script>
+    <script src="src/js/funcoes-jquery.js"></script>
+</body>
+</html>
