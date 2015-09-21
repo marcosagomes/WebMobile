@@ -12,29 +12,35 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
     $('.special.cards .image').dimmer({
         on: 'hover'
     });
-    
+
 //    Apresentar aquele alert (modal) daora
-    $('#showModal').click(function(){
-      $('.basic.modal')
-        .modal('show')
-      ;
+    $('#showModal').click(function () {
+        $('.basic.modal')
+                .modal('show')
+                ;
     });
-    
+
 //    Quando clicar no carrinho fazer uma animacao
-    $('.ui.bottom.teal.attached.button').click(function(){
+    $('.ui.bottom.teal.attached.button').click(function () {
 
 
 //    Testando uma animacao na contagem xD
-      var texto = parseInt($('#labelCarrinho').text());
-      
-      if (texto==0){
+        var texto = parseInt($('#labelCarrinho').text());
+
+        if (texto == 0) {
+            $('#labelCarrinho')
+                    .transition('browse right');
+        }
+
         $('#labelCarrinho')
-          .transition('browse right');
-      }
-      
-      $('#labelCarrinho')
-        .text(texto+1)
-        .transition('jiggle');
+                .text(texto + 1)
+                .transition('jiggle');
     });
-    
+    // Função do Slider da pagina de detalhes
+      $('#slides').slidesjs({
+        width: 1000,
+        height: 1000,
+        navigation: false
+      });
+
 });
