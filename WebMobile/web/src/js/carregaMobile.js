@@ -1,3 +1,4 @@
+
 function sizeOfThings() {
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
@@ -5,11 +6,11 @@ function sizeOfThings() {
     var screenWidth = screen.width;
     var screenHeight = screen.height;
 
-    if (windowWidth <= 500 && windowHeight <= 540) {
+    if (windowWidth <= 799) {
 
         location.href = "http://localhost:8080//WebMobile/detalheMobile.html"
 
-    }else if (windowWidth >= 501 && windowHeight >= 541) {
+    }else if (windowWidth >= 800) {
         location.href = "http://localhost:8080//WebMobile/detalhe.html"
     }
 };
