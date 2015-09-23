@@ -37,10 +37,10 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
                 .transition('jiggle');
     });
     // Função do Slider da pagina de detalhes
-      $('#slides').slidesjs({
-        width: 1000,
-        height: 1000,
-        navigation: false
-      });
 
+
+    $('.bxslider').bxSlider({
+        captions: true,
+        adaptiveHeight: true
+    });
 });
