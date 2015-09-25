@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition>
+        <link rel="stylesheet" type="text/css" href="bxslider/jquery.bxslider.css"></link>
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"></link>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="semantic/dist/semantic.js"></script>
+        <script src="src/js/funcoes-jquery.js"></script>
+        <div class="container">
+            <!--Menu principal-->
+            <div class="ui teal menu borderless inverted secondary">
+
+                <!--Item de menu-->
+                <div class="item">
+                    <!--Logo da imagem-->
+                    <div class="ui logo shape">
+                        <img class="ui tiny image" src="imagens/logo/image.png"/>
+                    </div>
+                </div>
+
+                <!--Titulo do site-->
+                <div class="item">
+                    <h1 class="title">
+                        eDraftstore
+                    </h1>
+                </div>
+
+                <!--Itens a direita-->
+                <div class="menu right">
+
+                    <!--Barra de pesquisa-->
+                    <div class="item">
+                        <div class="ui icon input">
+                            <input type="text" placeholder="Buscar..."/>
+                                <i class="search link icon"></i>
+                        </div>
+                    </div>
+
+                    <!--Utilizar o item abaixo para quando o usuario ESTIVER LOGADO-->
+                    <!--          <a class="ui item">
+                                <div class="column">
+                                  <i class="user icon"></i>
+                                  Minha conta
+                                </div>
+                              </a>-->
+
+                    <!--Utilizar o item abaixo para quando o usuario NÃO ESTIVER LOGADO-->
+                    <a class="ui item">
+                        <div class="column">
+                            <i class="sign in icon"></i>
+                            Login ou Cadastre-se
+                        </div>
+                    </a>
+
+                    <!--Item do carrinho de compras-->
+                    <a id="linkCarrinho" class="ui item">
+                        <div class="ui column">
+
+                            <!--Icone do carrinho-->
+                            <i class="cart icon"></i>
+
+                            <!--Texto do carrinho-->
+                            Carrinho
+
+                            <!--Label da quantidade de itens adicionados ao carrinho-->
+                            <div id="labelCarrinho" class="ui label hidden">0</div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            <!--Fim menu principal-->
+        </div>
+        <!--Fim container menu principal-->
+
+        <!--Menu das categorias-->
+        <div class="container">
+            <nav class="ui labeled small icon borderless menu centered grid inverted grey secondary">
+                <a class="item">
+                    <i class="desktop icon"></i>Computadores montados
+                </a>
+                <a class="item">
+                    <i class="laptop icon"></i>Notebooks
+                </a>
+                <a class="item">
+                    <i class="disk outline icon"></i>Componentes de hardware
+                </a>
+                <a class="item">
+                    <i class="game icon"></i>Acessórios para games
+                </a>
+                <a class="item">
+                    <i class="plug icon"></i>Periféricos
+                </a>
+            </nav>
+        </div>
+    </ui:composition>
+</html>
+
