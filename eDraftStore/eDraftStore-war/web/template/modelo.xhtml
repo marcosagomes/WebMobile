@@ -4,16 +4,23 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     
-    <ui:insert name="menu">
+  <div id="header">
+    <ui:insert name="header">
         <ui:include src="menu.xhtml"/>
     </ui:insert>
+  </div>
     
-    <ui:insert name="lista">
+  <div id="content">
+    <ui:insert name="content">
         <ui:include src="corpo.xhtml"/>
     </ui:insert>
-    
-    <ui:insert name="rodepe">
+  </div>
+  
+  <div id="footer">
+    <ui:insert name="footer">
         <ui:include src="rodape.xhtml"/>
     </ui:insert>
+  </div>
+  
 </html>
 
