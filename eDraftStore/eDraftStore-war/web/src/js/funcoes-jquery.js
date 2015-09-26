@@ -12,21 +12,18 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
     $('.special.cards .image').dimmer({
         on: 'hover'
     });
-
 //    Apresentar aquele alert (modal) daora
     $('#showModal').click(function () {
         $('.basic.modal')
                 .modal('show')
                 ;
     });
-
 //    Quando clicar no carrinho fazer uma animacao
     $('#carrinho').click(function () {
 
 
 //    Testando uma animacao na contagem xD
         var texto = parseInt($('#labelCarrinho').text());
-
         if (texto == 0) {
             $('#labelCarrinho')
                     .transition('browse right');
@@ -37,10 +34,9 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
                 .transition('jiggle');
     });
     // Função do Slider da pagina de detalhes
-
-
-    $('.bxslider').bxSlider({
-        captions: true,
-        adaptiveHeight: true
+    $('#slider').nivoSlider({
     });
+
+    //Função para os tabs da paginda de detalhes
+ $('.tabular.menu .item').tab();
 });
