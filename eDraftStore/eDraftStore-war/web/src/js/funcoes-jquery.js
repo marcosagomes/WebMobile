@@ -21,7 +21,7 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
     });
 
 //    Quando clicar no carrinho fazer uma animacao
-    $('#carrinho').click(function () {
+    $('.addCarrinho').click(function () {
 
 
 //    Testando uma animacao na contagem xD
