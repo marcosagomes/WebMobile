@@ -1,5 +1,7 @@
 package br.senac.tads.wrm.entidade;
 
+import java.io.Serializable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,7 +12,7 @@ package br.senac.tads.wrm.entidade;
  *
  * @author ramonhonorio
  */
-public class Produto {
+public class Produto implements Serializable {
   
   // Identificador
   private int id;
@@ -32,6 +34,7 @@ public class Produto {
     this.nome = nome;
     this.descricao = descricao;
     this.preco = preco;
+    this.precoAnterior = preco;
   }
 
   public Produto(int id, String nome, String categoria, float preco, float precoAnterior) {

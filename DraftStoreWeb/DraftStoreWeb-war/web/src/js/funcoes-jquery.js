@@ -40,3 +40,17 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
     //Função para os tabs da paginda de detalhes
  $('.tabular.menu .item').tab();
 });
+
+function animarCarrinho(quantidadeItens) {
+
+//    Testando uma animacao na contagem xD
+//        var texto = parseInt($('#labelCarrinho').text());
+        if (quantidadeItens == 0) {
+            $('#labelCarrinho')
+                    .transition('browse right');
+        }
+
+        $('#labelCarrinho')
+                .text(quantidadeItens + 1)
+                .transition('jiggle');
+}
