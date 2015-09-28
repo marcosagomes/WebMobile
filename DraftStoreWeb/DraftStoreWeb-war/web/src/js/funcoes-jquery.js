@@ -6,7 +6,7 @@
 
 
 // Permite a execucao inicial das funcionalidades javascript
-$(function () { // Abreviação para $(document).ready(function() { ... });
+$(function()  { // Abreviação para $(document).ready(function() { ... });
 
 //    Dimmer nas imagens
     $('.special.cards .image').dimmer({
@@ -34,23 +34,36 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
                 .transition('jiggle');
     });
     // Função do Slider da pagina de detalhes
-    $('#slider').nivoSlider({
+   
+    //Função para os tabs da paginda de detalhes
+    $('.tabular.menu .item').tab();
+
+
+    $('.ui.icon.button.menu').click(function () {
+        $('.ui.labeled.icon.sidebar')
+                .sidebar('toggle');
+    });
+    
+     $('.ui.icon.button.menu').click(function () {
+        $('.ui.labeled.icon.sidebar')
+                .sidebar('toggle');
+    });
+    
+     $('#slider').nivoSlider({
     });
 
-    //Função para os tabs da paginda de detalhes
- $('.tabular.menu .item').tab();
 });
 
 function animarCarrinho(quantidadeItens) {
 
 //    Testando uma animacao na contagem xD
 //        var texto = parseInt($('#labelCarrinho').text());
-        if (quantidadeItens == 0) {
-            $('#labelCarrinho')
-                    .transition('browse right');
-        }
-
+    if (quantidadeItens == 0) {
         $('#labelCarrinho')
-                .text(quantidadeItens + 1)
-                .transition('jiggle');
+                .transition('browse right');
+    }
+
+    $('#labelCarrinho')
+            .text(quantidadeItens + 1)
+            .transition('jiggle');
 }

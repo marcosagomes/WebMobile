@@ -47,7 +47,7 @@
                     por
                   </i> 
                   <div class="value">
-                    <strong> <h:outputText value="#{produtoBean.produto.preco}">
+                    <strong> <h:outputText value="R$ #{produtoBean.produto.preco}">
                         <f:convertNumber type="currency" locale="pt_BR" currencySymbol=""/>
                       </h:outputText> </strong>
                   </div> 
@@ -57,14 +57,12 @@
                 </div>
                 <br/>
               </div>
-              <div> 
                 <div class="ui bottom teal button addCarrinho">
                   <i class="cart icon"></i>
                   Adicionar ao carrinho
                 </div> 
                 <br/>
                 <br/>
-              </div>
             </div>
           </div>
 
