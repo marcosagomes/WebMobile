@@ -33,7 +33,7 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
     $(".addCarrinho").focus(function () {
         $(this).removeClass("ui-state-focus");
     });
-    $(".ui.icon.button").click(function () {
+    $("#btslide").click(function () {
         $('.ui.labeled.icon.sidebar')
                 .sidebar('toggle')
                 ;
