@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+  <h:body>
+    <ui:composition template="template/modelo.xhtml">
+      <ui:define name="content">
+        <!--Segmento Ofertas da Semana-->
+
+        <!--Header-->
+        <h2 class="ui top attached center aligned header grey">
+          <div class='ui label huge fluid'>
+            <i class="cart icon"/>
+            Carrinho
+          </div>
+        </h2>
+        <h:form prependId="false">
+          <div class="ui middle aligned massive animated list">
+            <ui:repeat value="#{carrinhoBean.itens}" var="item" varStatus="status">
+              <div class="item">
+
+                <div class="left floated content">
+                  <img class="ui left floated avatar image" 
+                       src="imagens/produtos/processadori7.jpg"/>
+                  <div class="content">
+                    <h:outputText value="#{item.produto.nome}"/>
+                  </div>
+                </div>
+
+                <div class="right floated content">
+                  <p:button styleClass="ui button inverted blue"
+                                   value="Detalhes" 
+                                   outcome="detalhe.xhtml"
+                                   icon="fa fa-fw fa-list-alt">
+                    <f:param name="id" value="#{item.produto.id}"/>
+                  </p:button>
+
+                  <p:commandButton styleClass="ui button inverted red"
+                                   value="Remover" 
+                                   action="#{carrinhoBean.removerProdutoNoIndice(status.index)}"
+                                   icon="fa fa-fw fa-shopping-cart" ajax="false">
+                  </p:commandButton>
+                </div>
+              </div>
+            </ui:repeat>
+          </div>
+        </h:form>
+      </ui:define>
+    </ui:composition>
+  </h:body>
+
+</html>
+

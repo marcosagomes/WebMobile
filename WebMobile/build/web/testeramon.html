@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>eDraftstore teste</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  </head>
+  <body>
+
+    <!--Container do menu principal-->
+    <div class="container">
+      <!--Menu principal-->
+      <div class="ui teal menu borderless inverted secondary">
+
+        <!--Item de menu-->
+        <div class="item">
+          <!--Logo da imagem-->
+          <div class="ui logo shape">
+            <img class="ui tiny image" src="imagens/logo/image.png"/>
+          </div>
+        </div>
+
+        <!--Titulo do site-->
+        <div class="item">
+          <h1 class="title">
+            eDraftstore
+          </h1>
+        </div>
+
+        <!--Itens a direita-->
+        <div class="menu right">
+
+          <!--Barra de pesquisa-->
+          <div class="item">
+            <div class="ui icon input">
+              <input type="text" placeholder="Buscar...">
+              <i class="search link icon"></i>
+            </div>
+          </div>
+
+          <!--Utilizar o item abaixo para quando o usuario ESTIVER LOGADO-->
+<!--          <a class="ui item">
+            <div class="column">
+              <i class="user icon"></i>
+              Minha conta
+            </div>
+          </a>-->
+
+          <!--Utilizar o item abaixo para quando o usuario NÃO ESTIVER LOGADO-->
+          <a class="ui item">
+            <div class="column">
+              <i class="sign in icon"></i>
+              Login ou Cadastre-se
+            </div>
+          </a>
+
+          <!--Item do carrinho de compras-->
+          <a id="linkCarrinho" class="ui item">
+            <div class="ui column">
+
+              <!--Icone do carrinho-->
+              <i class="cart icon"></i>
+
+              <!--Texto do carrinho-->
+              Carrinho
+
+              <!--Label da quantidade de itens adicionados ao carrinho-->
+              <div id="labelCarrinho" class="ui label hidden">0</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+      <!--Fim menu principal-->
+    </div>
+    <!--Fim container menu principal-->
+
+    <!--Menu das categorias-->
+    <div class="container">
+      <nav class="ui labeled small icon borderless menu centered grid inverted grey secondary">
+        <a class="item">
+          <i class="desktop icon"></i>Computadores montados
+        </a>
+        <a class="item">
+          <i class="laptop icon"></i>Notebooks
+        </a>
+        <a class="item">
+          <i class="disk outline icon"></i>Componentes de hardware
+        </a>
+        <a class="item">
+          <i class="game icon"></i>Acessórios para games
+        </a>
+        <a class="item">
+          <i class="plug icon"></i>Periféricos
+        </a>
+      </nav>
+    </div>
+
+    <!--Segmento Ofertas da Semana-->
+    <div class="ui segment borderless"> 
+      
+      <!--Header-->
+      <h2 class="ui header center aligned">
+        <div class='ui big fluid label'>
+          <i class="star icon"></i>
+          Ofertas da semana
+        </div>
+      </h2>
+      
+      <!--Inicio dos cards dos produtos-->
+      <div class="cards">
+        <div class="ui special cards ">
+          <!--Inicio do card-->
+          <div class="card">
+            <!--Icone de quando o produto ja for adicionado no carrinho-->
+            <!--<a class="ui corner teal label"><i class="cart icon"></i></a>-->
+
+            <!--Blurring image: efeito esmaecente do ver detalhes-->
+            <div class="blurring dimmable image">
+              <div class="ui inverted dimmer">
+                <div class="content">
+                  <div class="center">
+                    <a href="detalhe.html"> <div class="ui primary button">Ver mais detalhes</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <img src="imagens/produtos/processadori7.jpg">
+            </div>
+
+            <!--Meta dados-->
+            <div class="meta center aligned">
+              <a>
+                <div class='ui tag label'>
+                  Componentes de hardware
+                </div>
+              </a>
+            </div>
+
+            <!--Conteudo-->
+            <div class="content">
+              <!--Titulo-->
+              <a class="header">Processador Intel Core i7 3770 (BX80637I73770) 3° Geração</a>
+              <br>
+
+              <!--Preco-->
+              <div class="text center aligned">
+                <div class="ui tiny horizontal statistic">
+                  De R$ 1.299,00 por
+                  <div class="label">
+                    R$
+                  </div>
+                  <div class="value">
+                    1.099,00
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Botao "atachado"-->
+            <div id="carrinho" class="ui bottom teal attached button">
+              <i class="cart icon"></i>
+              Adicionar ao carrinho
+            </div>
+
+          </div> 
+          <!-- Fim do card -->
+          
+          <!--Inicio do card-->
+          <div class="card">
+            <!--Icone de quando o produto ja for adicionado no carrinho-->
+            <a class="ui corner yellow label"><i class="cart icon"></i></a>
+
+            <!--Blurring image: efeito esmaecente do ver detalhes-->
+            <div class="blurring dimmable image">
+              <div class="ui inverted dimmer">
+                <div class="content">
+                  <div class="center">
+                      <a href="detalhe.html"> <div class="ui primary button">Ver mais detalhes</div>
+                      </a>
+                  </div>
+                </div>
+              </div>
+              <img src="imagens/produtos/controlexbox.jpg">
+            </div>
+
+            <!--Meta dados-->
+            <div class="meta center aligned">
+              
+              <a>
+                <div class='ui tag label'>
+                  Acessórios para games
+                </div>
+              </a>
+            </div>
+
+            <!--Conteudo-->
+            <div class="content">
+              <!--Titulo-->
+              <a class="header">Controle com Fio para Xbox 360 e PC - Oficial Microsoft</a>
+              <br>
+
+              <!--Preco-->
+              <div class="text center aligned">
+                <div class="ui tiny horizontal statistic">
+                  De R$ 129,00 por
+                  <div class="label">
+                    R$
+                  </div>
+                  <div class="value">
+                    99,00
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Botao "atachado"-->
+            <div class="ui bottom yellow attached button">
+              <i class="cart icon"></i>
+              No carrinho
+            </div>
+
+          </div> 
+          <!-- Fim do card -->
+        </div> 
+        <!--Fim dos special cards-->
+      </div>
+      <!--Fim dos cards-->
+    </div>
+    <!--Fim do segment-->
+
+    <!--Exemplo dos passos da finalizacao da compra-->
+    <div class="ui segment center aligned">
+      <p>
+        <div class="ui label">
+          <i class="blue info icon"></i>
+          Exemplo dos passos para a finalização da compra ;)
+        </div>
+      </p>
+      
+      <div class="ui steps">
+      <div class="active step">
+        <i class="truck icon"></i>
+        <div class="content">
+          <div class="title">Entrega</div>
+          <div class="description">Escolher o endereço para a entrega</div>
+        </div>
+      </div>
+      <div class="disabled step">
+        <i class="payment icon"></i>
+        <div class="content">
+          <div class="title">Pagamento</div>
+          <div class="description">Escolher forma de pagamento</div>
+        </div>
+      </div>
+      <div class="disabled step">
+        <i class="info icon"></i>
+        <div class="content">
+          <div class="title">Confirmação</div>
+          <div class="description">Checar os dados e finalizar compra</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--Alert (modal) insano!!!-->
+    <div class="ui basic modal">
+      <div class="header">Olha que daora!!!</div>
+      <div class="content">
+        <p>Alerts nunca mais.</p>
+      </div>
+      <div class="actions">
+        <div class="ui green approve button">Realmente</div>
+        <div class="ui button">Talvez</div>
+        <div class="ui red cancel button">Até parece</div>
+      </div>
+    </div>
+    
+    <!--Botao magico-->
+    <div class="ui segment">
+      <button id="showModal" class="ui violet button fluid">
+        Clique aqui ver algo mágico!
+      </button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="semantic/dist/semantic.js"></script>
+    <script src="src/js/funcoes-jquery.js"></script>
+  </body>
+</html>
+
+<!--Rascunho-->
+<!--Inicio do card-->
+<!--                <div class="column">
+                    <div class="ui fluid card">
+                      Icone de quando o produto ja for adicionado no carrinho
+                      <a class="ui corner yellow label"><i class="cart icon"></i></a>
+
+                      Blurring image: efeito esmaecente do ver detalhes
+                      <div class="blurring dimmable image">
+                        <div class="ui inverted dimmer">
+                          <div class="content">
+                            <div class="center">
+                                <a href="detalhe.html"> <div class="ui primary button">Ver mais detalhes</div>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                        <img src="imagens/produtos/controlexbox.jpg"/>
+                      </div>
+
+                      Meta dados
+                      <div class="meta center aligned">
+
+                        <a>
+                          <div class='ui tag label'>
+                            Acessórios para games
+                          </div>
+                        </a>
+                      </div>
+
+                      Conteudo
+                      <div class="content">
+                        Titulo
+                        <a class="header">Controle com Fio para Xbox 360 e PC - Oficial Microsoft</a>
+                        <br/>
+
+                        Preco
+                        <div class="text center aligned">
+                          <div class="ui tiny horizontal statistic">
+                            De R$ 129,00 por
+                            <div class="label">
+                              R$
+                            </div>
+                            <div class="value">
+                              99,00
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      Botao "atachado"
+                      <div class="ui bottom yellow attached button">
+                        <i class="cart icon"></i>
+                        No carrinho
+                      </div>
+
+                    </div> 
+                </div>-->
+                <!-- Fim do card -->

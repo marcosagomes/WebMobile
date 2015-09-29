@@ -74,9 +74,11 @@ public class CarrinhoBean implements Serializable{
   }
   
   public void imprimirCarrinho(){
+    System.out.println("Carrinho de compras:");
     for (ProdutoCarrinho item : itens) {
       System.out.println("-> "+item.getProduto().getNome());
     }
+    System.out.println("--------------------");
   }
   
 }

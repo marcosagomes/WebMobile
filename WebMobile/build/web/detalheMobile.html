@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+
+    <head>
+        <title>eDraftstore teste</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="bxslider/jquery.bxslider.css">
+        <link rel="stylesheet" type='text/css' href="src/css/detalheMedia.css" 
+              media="screen and (max-width: 480px)" >
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="bxslider/jquery.bxslider.min.js"></script>
+        <style>
+            span{
+                font-size: 14px;
+            }ul,li{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+                float: center;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--Container do menu principal-->
+        <div class="container">
+            <!--Menu principal-->
+            <div class="ui teal menu borderless inverted secondary">
+
+                <!--Item de menu-->
+                <div class="item">
+                    <!--Logo da imagem-->
+                    <div class="ui logo shape">
+                        <img class="ui tiny image" src="imagens/logo/image.png"/>
+                    </div>
+                </div>
+
+                <!--Titulo do site-->
+                <div class="item">
+                    <h1 class="title">
+                        eDraftstore
+                    </h1>
+                </div>
+
+                <!--Itens a direita-->
+                <div class="right menu">
+
+                    <!--Barra de pesquisa-->
+                    <div class="item">
+                        <div class="ui icon input">
+                            <input type="text" placeholder="Buscar...">
+                            <i class="search link icon"></i>
+                        </div>
+                    </div>
+
+                    <!--Utilizar o item abaixo para quando o usuario ESTIVER LOGADO-->
+                    <!--          <a class="ui item">
+                                <div class="column">
+                                  <i class="user icon"></i>
+                                  Minha conta
+                                </div>
+                              </a>-->
+
+                    <!--Utilizar o item abaixo para quando o usuario NÃO ESTIVER LOGADO-->
+                    <a class="ui item">
+                        <div class="column">
+                            <i class="sign in icon"></i>
+                            Login ou Cadastre-se
+                        </div>
+                    </a>
+
+                    <!--Item do carrinho de compras-->
+                    <a id="linkCarrinho" class="ui item">
+                        <div class="ui column">
+
+                            <!--Icone do carrinho-->
+                            <i class="cart icon"></i>
+
+                            <!--Texto do carrinho-->
+                            Carrinho
+
+                            <!--Label da quantidade de itens adicionados ao carrinho-->
+                            <div id="labelCarrinho" class="ui label hidden">0</div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            <!--Fim menu principal-->
+        </div>
+        <!--Fim container menu principal-->
+
+        <!--Menu das categorias-->
+        <div class="container">
+            <nav class="ui labeled small icon borderless menu centered grid inverted grey secondary">
+                <a class="item">
+                    <i class="desktop icon"></i>Computadores montados
+                </a>
+                <a class="item">
+                    <i class="laptop icon"></i>Notebooks
+                </a>
+                <a class="item">
+                    <i class="disk outline icon"></i>Componentes de hardware
+                </a>
+                <a class="item">
+                    <i class="game icon"></i>Acessórios para games
+                </a>
+                <a class="item">
+                    <i class="plug icon"></i>Periféricos
+                </a>
+            </nav>
+        </div>
+        <br>
+        <br>
+        <!--Corpo do detalhe-->
+        <!--Colunas para a divisão da imagem e detalhes do produto-->
+        <div class="ui two column centered grid">
+            <div class="ui column">
+                <div class="ui centered image medium">
+                    <ul class="bxslider">
+                        <img src="imagens/produtos/processadori7.jpg"/>
+                        <img src="imagens/produtos/processadori7.jpg"/>
+                    </ul>                   
+                </div>
+            </div>
+        </div>
+        <div class="ui two column centered grid">
+            <div class="column">
+                <h3 class="header aligned"> Processador Intel Core i7 3770 (BX80637I73770) 3° Geração</h3>
+                <div class="text aligned ">
+                    <div class="ui tiny statistic">
+                        <strike><i>De R$ 1.299,00 por</i></strike>  
+                        <div class="value">
+                            <strong><span>R$</span></strong> 1.099,00
+                        </div> 
+                        <div class="text center aligned">
+                            <strong>8x</strong> de <strong>137,37 </strong> sem juros no paypal
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div> <div id="carrinho" class="ui bottom teal button ">
+                        <i class="cart icon"></i>
+                        Adicionar ao carrinho
+                    </div> 
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="ui two column centered grid">
+            <div class="column">
+                <div class="message">
+                    <p>&nbsp;</p>
+                    <p><span><strong>Caracter&iacute;sticas:<br />
+                            </strong>- Marca: Intel <br />- Modelo:&nbsp;</span>BX80637I73770</p>
+                    <p>&nbsp;</p>
+                    <p><span><strong>Especifica&ccedil;&otilde;es:<br />
+                            </strong>- Tipo: CPU / Microprocessador<br /></span>
+                        <span>- Fam&iacute;lia: Intel Core i7</span><br />
+                        <span>- N&uacute;mero do modelo: i7-3770</span><br />
+                        <span>- Frequ&ecirc;ncia: 3400 MHz</span><br />
+                        <span>- Freq&uuml;&ecirc;ncia Turbo: 3900 MHz</span><br />
+                        <span>- Multiplicador de clock: 34</span><br />
+                        <span>- Pacote: 1155 terra-Flip-Chip Land Grid Array</span><br/>
+                        <span>- Soquete: 1155 (soquete H2)&nbsp;</span><br/>
+                        <span>- Microarquitetura: Ivy Bridge</span><br />
+                        <span>- N&uacute;cleo do processador: Ivy Bridge</span>
+                        <br /><span>- Processo de fabrica&ccedil;&atilde;o: 0,022 micron</span>
+                        <br /><span>- Largura de dados: 64 bits</span><br />
+                        <span>- 4x n&uacute;cleos</span><br /><span>- 8x threads</span>
+                        <br /><span>- Unidade de Ponto Flutuante: Integrado</span><br />
+                        <span>- N&iacute;vel tamanho do cache de um: 4 x 32 KB cache de instru&ccedil;&atilde;o&nbsp;</span>
+                        <br /><span>- 4 x 32 caches de dados KB</span><br />
+                        <span>- N&iacute;vel tamanho do cache de 2: 4 x 256 KB</span><br />
+                        <span>- N&iacute;vel tamanho do cache de 3: 8 MB de cache compartilhado</span><br />
+                        <span>- Multiprocessamento: Uniprocessor<br />
+                        </span>- Dual-channel controlador de mem&oacute;ria DDR3<br />- Interface: PCI Express 3.0
+                        <br />- HD 4000 controlador de gr&aacute;ficos <br />
+                        - Par&acirc;metros el&eacute;tricos / t&eacute;rmica: Thermal Design Power: 77 Watt</p>
+                    <p>&nbsp;</p>
+                    <p><strong>ATEN&Ccedil;&Atilde;O!</strong> Verifique se sua placa-m&atilde;e suporta a terceira gera&ccedil;&atilde;o de processadores da Intel (Ivy Bridge). Para o funcionamento correto dos novos processadores Ivy Bridge (3&ordm; gera&ccedil;&atilde;o da Intel), &eacute; altamente recomend&aacute;vel a atualiza&ccedil;&atilde;o da BIOS para a mais nova vers&atilde;o. Para tal procedimento, &eacute; necess&aacute;rio que um t&eacute;cnico de sua confian&ccedil;a o fa&ccedil;a. Qualquer erro na atualiza&ccedil;&atilde;o por falta de conhecimento t&eacute;cnico, poder&aacute; ocasionar a perda irrevers&iacute;vel da placa m&atilde;e.&nbsp;</p> <br>
+                </div>
+            </div>
+        </div>
+        <script src="semantic/dist/semantic.js"></script>
+        <script src="src/js/funcoes-jquery.js"></script>
+        <script src="src/js/carregaMobile.js"></script>
+    </body>
+</html>
