@@ -45,7 +45,7 @@ $(function()  { // Abreviação para $(document).ready(function() { ... });
     });
     
      $('.ui.icon.button.menu').click(function () {
-        $('.ui.labeled.icon.sidebar')
+        $('#sidebar')
                 .sidebar('toggle');
     });
     
