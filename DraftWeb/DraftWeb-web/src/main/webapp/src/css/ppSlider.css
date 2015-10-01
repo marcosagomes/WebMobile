@@ -8,8 +8,17 @@ and open the template in the editor.
     Author     : Marcos
 */
 
-.slids{
-/*   position: relative;
-   left: 50%;
-   display: block;*/
-}  
+#loginMenu{
+    right: 8%;
+
+}
+#nomeMenu{
+    right: 4%;
+}
+#pesquisaMenu{
+     right: 18.9%;
+    
+}
+#linkCarrinho2{
+     right: 14%;
+}

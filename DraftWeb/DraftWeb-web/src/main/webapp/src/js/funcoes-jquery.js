@@ -23,6 +23,8 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
         $(this).blur();
         var qtd = parseInt($('#labelCarrinho').text());
         animacaoAdicionouItens(qtd);
+        var qtd = parseInt($('#labelCarrinho2').text());
+        animacaoMobile(qtd);       
     });
     // Função do Slider da pagina de detalhes
     $('#slider').nivoSlider({});
@@ -34,10 +36,16 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
         $(this).removeClass("ui-state-focus");
     });
     $("#btslide").click(function () {
-        $('.ui.labeled.icon.sidebar')
+        $('.ui.labeled.icon.sidebar.menu')
                 .sidebar('toggle')
                 ;
     });
+    $("#pesquisaMenu").click(function () {
+        $('.ui.labeled.icon.sidebar.pesquisa')
+                .sidebar('toggle')
+                ;
+    });
+    
 
 });
 
@@ -50,6 +58,18 @@ function animacaoAdicionouItens(quantidade) {
     }
 
     $('#labelCarrinho')
+            .text(quantidade + 1)
+            .transition('jiggle');
+}
+function animacaoMobile(quantidade) {
+//    Testando uma animacao na contagem xD
+//        var texto = parseInt($('#labelCarrinho').text());
+    if (quantidade == 0) {
+        $('#labelCarrinho2')
+                .transition('browse right');
+    }
+
+    $('#labelCarrinho2')
             .text(quantidade + 1)
             .transition('jiggle');
 }

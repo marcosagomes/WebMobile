@@ -13,6 +13,7 @@
         <script src="src/js/funcoes-jquery.js"></script>
         <link rel="stylesheet" href="Nivo-Slider-master/nivo-slider.css" type="text/css"/>
         <link rel="stylesheet" href="Nivo-Slider-master/themes/default/default.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="src/css/ppSlider.css" type="text/css"/>
         <script src="Nivo-Slider-master/jquery.nivo.slider.pack.js"/>
         <div class="ui grid">
             <div class="computer only row">
@@ -121,38 +122,44 @@
                         </button>
                     </div>
 
-                    <div class="item">
+                    <div class="item" id="nomeMenu">
                         <h1 class="title">
                             <h:outputLink value="home.xhtml" style="color: white">
                                 eDraftstore
                             </h:outputLink>
                         </h1>
                     </div>
-
-                    <div class="item">
-                        
-                        <a>  <i class="sign in icon" style="color: white"></i> </a>
-
-                    </div>
-
+                    <h:outputLink class="ui item" id="loginMenu">                       
+                      <i class="sign in icon" style="color: white"></i>
+                    </h:outputLink>
 
                     <h:outputLink value="carrinho.xhtml" id="linkCarrinho2" class="ui item">
                         <i class="cart icon" style="color: white"></i>
-                            <!--Icone do carrinho-->
+                        <!--Icone do carrinho-->
 
-                            <!--Texto do carrinho-->
-                            <!--Label da quantidade de itens adicionados ao carrinho-->
-                            <h:panelGroup layout="block" 
-                                          id="labelCarrinho2" 
-                                          styleClass="ui label #{carrinhoBean.itens.size() == 0 ? 'hidden' : ''} ">
-                                #{carrinhoBean.itens.size()}
-                            </h:panelGroup>
-                        
+                        <!--Texto do carrinho-->
+                        <!--Label da quantidade de itens adicionados ao carrinho-->
+                        <h:panelGroup layout="block" 
+                                      id="labelCarrinho2" 
+                                      styleClass="ui label #{carrinhoBean.itens.size() == 0 ? 'hidden' : ''} ">
+                            #{carrinhoBean.itens.size()}
+                        </h:panelGroup>
                     </h:outputLink>
-
-
-
+                    <div class="ui item" id="pesquisaMenu">
+                    <i class="search icon"></i>
+                    </div>
                 </div>
+                <div class="ui top demo vertical inverted sidebar labeled icon pesquisa">
+                   <div class="ui segment ">
+                    <div class="ui category search">
+                        <div class="ui icon input fluid">
+                            <input class="prompt" type="text" placeholder="Pesquisar produto"/>
+                                <i class="search icon"></i>
+                        </div>
+                        <div class="results"></div>
+                    </div>
+                </div>
+                    </div>
                 <div class="ui left demo vertical inverted sidebar labeled icon menu">
                     <nav class="ui labeled small icon borderless menu centered grid inverted grey secondary">
                         <a class="item">
