@@ -5,52 +5,70 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-  <h:body>
-    <ui:composition template="template/modelo.xhtml">
-      <ui:define name="content">
-        <!--Segmento Ofertas da Semana-->
 
-        <!--Header-->
-        <h2 class="ui top attached center aligned header grey">
-          <div class='ui label huge fluid'>
-            <i class="cart icon"/>
-            Carrinho
-          </div>
-        </h2>
-        <h:form prependId="false">
-          <div class="ui middle aligned massive animated list">
-            <ui:repeat value="#{carrinhoBean.itens}" var="item" varStatus="status">
-              <div class="item">
+    <h:body>
+        <ui:composition template="template/modelo.xhtml">
+            <ui:define name="content">
+                <!--Segmento Ofertas da Semana-->
 
-                <div class="left floated content">
-                  <img class="ui left floated avatar image" 
-                       src="imagens/produtos/processadori7.jpg"/>
-                  <div class="content">
-                    <h:outputText value="#{item.produto.nome}"/>
-                  </div>
-                </div>
+                <!--Header-->
+                <h2 class="ui top attached center aligned header grey">
+                    <div class='ui label huge fluid'>
+                        <i class="cart icon"/>
+                        Carrinho
+                    </div>
+                </h2>
+                <h:form prependId="false">
+                    <div class="ui middle aligned massive animated list">
+                        <ui:repeat value="#{carrinhoBean.itens}" var="item" varStatus="status">
+                            <div class="item">
 
-                <div class="right floated content">
-                  <p:button styleClass="ui button inverted blue"
-                                   value="Detalhes" 
-                                   outcome="detalhe.xhtml"
-                                   icon="fa fa-fw fa-list-alt">
-                    <f:param name="id" value="#{item.produto.id}"/>
-                  </p:button>
+                                <div class="left floated content">
+                                    <img class="ui left floated avatar image" 
+                                         src="imagens/produtos/processadori7.jpg"/>
+                                    <div class="content">
+                                        <h:outputText value="#{item.produto.nome}"/>
+                                    </div>
+                                </div>
 
-                  <p:commandButton styleClass="ui button inverted red"
-                                   value="Remover" 
-                                   action="#{carrinhoBean.removerProdutoNoIndice(status.index)}"
-                                   icon="fa fa-fw fa-shopping-cart" ajax="false">
-                  </p:commandButton>
-                </div>
-              </div>
-            </ui:repeat>
-          </div>
-        </h:form>
-      </ui:define>
-    </ui:composition>
-  </h:body>
+                                <div class="right floated content">
+                                    <p:button styleClass="ui button inverted blue"
+                                              value="Detalhes" 
+                                              outcome="detalhe.xhtml"
+                                              icon="fa fa-fw fa-list-alt">
+                                        <f:param name="id" value="#{item.produto.id}"/>
+                                    </p:button>
+
+                                    <p:commandButton styleClass="ui button inverted red"
+                                                     value="Remover" 
+                                                     action="#{carrinhoBean.removerProdutoNoIndice(status.index)}"
+                                                     update="valorTotal"
+                                                     icon="fa fa-fw fa-shopping-cart" ajax="false">
+                                    </p:commandButton>
+                                </div>
+                            </div>
+                        </ui:repeat>
+                        <br></br>
+                        <div class="item">
+                            <div class="left floated content">
+                                <h:outputLabel value="Preço da venda: "/>
+                                <h:outputText id="valorTotal" value="#{carrinhoBean.precoTotoal}">
+                                    <f:convertNumber type="currency" locale="pt_BR" />
+                                </h:outputText>
+                            </div>
+                            <div class="right floated content">
+                                <p:commandButton styleClass="ui button green"
+                                                 value="Finalizar compra" 
+                                                 action="#{carrinhoBean.finalizarCompra()}"                                                 
+                                                 icon="fa fa-fw fa-shopping-cart" ajax="false">
+                                </p:commandButton>
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
 
 </html>
 
