@@ -24,7 +24,7 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
         var qtd = parseInt($('#labelCarrinho').text());
         animacaoAdicionouItens(qtd);
         var qtd = parseInt($('#labelCarrinho2').text());
-        animacaoMobile(qtd);       
+        animacaoMobile(qtd);
     });
     // Função do Slider da pagina de detalhes
     $('#slider').nivoSlider({});
@@ -46,8 +46,7 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
                 ;
     });
     
-
-});
+ });
 
 function animacaoAdicionouItens(quantidade) {
 //    Testando uma animacao na contagem xD
