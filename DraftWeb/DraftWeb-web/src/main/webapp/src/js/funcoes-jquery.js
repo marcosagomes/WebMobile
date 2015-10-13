@@ -45,6 +45,8 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
                 .sidebar('toggle')
                 ;
     });
+     //Função para os tabs da pagina do perfil
+    $('.ui.vertical.fluid.tabular.menu .item').tab();
     
  });
 
