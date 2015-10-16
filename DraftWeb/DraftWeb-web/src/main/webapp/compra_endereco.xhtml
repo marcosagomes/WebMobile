@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="template/modelo_compra.xhtml"> 
+        
+        <ui:define name="content">
+            
+            <br/>
+
+            <div class="ui basic segment">
+                <div class="ui grid stackable">
+                    <div class="ui cards stackable">
+
+                        <div class="ui card">
+                            <div class="ui content center aligned">
+                                <h4 class="center aligned">Adicionar Endereço</h4>
+                                <a class="center aligned" id="addEndereco">
+                                    <h1><i class="add circle icon blue"></i></h1>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="ui card">
+                            <div class="content">
+                                <div class="header">Fulano da Silva</div>
+                                <div class="description">
+                                    <p>José Paulo Cândido, 80</p>
+                                    <p>Jardim Silveira</p>
+                                    <p>CEP 04892010</p>
+                                    <p>São Paulo, SP</p>
+                                </div>
+                                <br/>
+                                <div class="ui bottom attached button">
+                                    <i class="check square icon"></i>
+                                    Entregar nesse endereço
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ui card">
+                            <div class="content">
+                                <div class="header">Fulano da Silva</div>
+                                <div class="description">
+                                    <p>José Paulo Cândido, 80</p>
+                                    <p>Jardim Silveira</p>
+                                    <p>CEP 04892010</p>
+                                    <p>São Paulo, SP</p>
+                                </div>
+                                <br/>
+                                <div class="ui bottom attached button">
+                                    <i class="check square icon"></i>
+                                    Entregar nesse endereço
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="ui  modal endereco">
+                <div class="header">Cadastrar Endereço</div>
+                <div class="ui basic segment ">
+                    <h:form class="ui form">
+                        <div class="ui field">
+                            <label>Nome do destinatário</label>
+                            <div class="ui input">
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div class="ui field">
+                            <label>CEP</label>
+                            <div class="uiinput">
+                                <input type="text" />
+
+                            </div>
+                        </div>
+                        <div class="ui two fields">
+                            <div class="iu field">
+                                <label>Número</label>
+                                <div class="ui input">
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div class="ui field">
+                                <label>Complemento</label>
+                                <div class="ui input">
+                                    <input type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui field">
+                            <label>Bairro</label>
+                            <div class="ui input">
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div class="ui two fields">
+                            <div class="ui field">
+                                <label>Cidade</label>
+                                <div class="ui input">
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div class="ui field">
+                                <label>Estado</label>
+                                <select>
+                                    <option value="" label="Selecione" disabled="true" selected="true"/>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espirito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ui six wide field">
+                            <label>Tipo de endereço</label>
+                            <select>
+                                <option value="" label="Selecione" disabled="true" selected="true"/>
+                                <option value="residencial" label="Residencial"/>                            
+                                <option value="comercial" label="Comercial"/>                            
+                            </select>
+                        </div>    
+                        <div class="ui field">
+                            <label>Ponto de referência</label>
+                            <div class="ui input">
+                                <input type="text" />
+                            </div>
+                        </div> 
+                        <div class="ui basic segment center aligned">
+                            <div class="ui buttons">
+                                <button class="ui button blue">Salvar</button>                         
+                                <div class="or" data-text="ou"></div>
+                                <button class="ui button">Cancelar</button>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+
+
+            
+
+
+            <script>
+                $(function () {
+                    $('#addEndereco').click(function () {
+                        $('.modal.endereco')
+                                .modal('show')
+                                ;
+                    });
+                });
+            </script>
+        </ui:define>
+    </ui:composition>
+</html>
+
