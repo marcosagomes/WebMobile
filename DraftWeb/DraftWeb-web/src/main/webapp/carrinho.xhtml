@@ -11,13 +11,15 @@
             <ui:define name="content">
                 <!--Segmento Ofertas da Semana-->
 
-                <!--Header-->
+                <!--Header
                 <h2 class="ui top center aligned header grey">
                     <div class='ui label huge fluid'>
                         <i class="cart icon"/>
                         Carrinho
                     </div>
                 </h2>
+                -->
+                <br/>
                 <h:form prependId="false">
                     <div class="ui middle aligned massive animated list">
                         <ui:repeat value="#{carrinhoBean.itens}" var="item" varStatus="status">
@@ -61,10 +63,15 @@
                             </div>
                         <div class="column">                           
                                 <p:commandButton class="ui teal button"
-                                                 value="Finalizar compra" 
+                                                 value="Continuar compra" 
                                                  action="#{carrinhoBean.finalizarCompra()}"                                                 
                                                  icon="fa fa-fw fa-shopping-cart" ajax="false">
                                 </p:commandButton>
+                                <p:button styleClass="ui button inverted blue"
+                                              value="Continuar compra Teste" 
+                                              outcome="compra_endereco.xhtml"
+                                              icon="fa fa-fw fa-list-alt">
+                                    </p:button>
                         </div>
                     </div>
                     </div>
