@@ -37,10 +37,13 @@
                         <div class="center">
                           <!--                                <a href="detalhe.html"> <div class="ui primary button">Ver mais detalhes</div>
                                                           </a>-->
-                          <h:outputLink value="detalhe.xhtml" class="ui primary button">
-                            <f:param name="id" value="#{item.id}" />
-                            Ver mais detalhes
-                          </h:outputLink>
+
+                          <p:commandLink action="#{produtoBean.carregarDetalhes()}" 
+                                             value="Ver mais detalhes"
+                                             styleClass="ui primary button"
+                                             ajax="false">
+                              <f:param name="id" value="#{item.id}" />
+                          </p:commandLink>
                         </div>
                       </div>
                     </div>

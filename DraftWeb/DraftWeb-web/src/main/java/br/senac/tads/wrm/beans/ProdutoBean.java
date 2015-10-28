@@ -12,6 +12,7 @@ import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
 /**
  *
@@ -23,6 +24,8 @@ public class ProdutoBean implements Serializable{
 
   private ArrayList<Produto> ofertasSemana;
   
+  private Produto produtoDetalhe;
+
   public ProdutoBean() {
     
     ofertasSemana = new ArrayList<>();
@@ -67,19 +70,35 @@ public class ProdutoBean implements Serializable{
     }
     
   }
+  
+  public String carregarDetalhes(){
+    this.produtoDetalhe = this.getProduto();
+    
+    System.out.println("NOMEEEEE: "+this.produtoDetalhe.getNome());
+    
+    return "/detalhe.xhtml";
+  }
 
   public ArrayList<Produto> getOfertasSemana() {
     return ofertasSemana;
   }
   
   public Produto getProduto() {
-        FacesContext contexto = FacesContext.getCurrentInstance();
-        return ofertasSemana.get(getId(contexto));
-    }
+    FacesContext contexto = FacesContext.getCurrentInstance();
+    System.out.println("Produto id "+ofertasSemana.get(getId(contexto)).getId()+"//"+ofertasSemana.get(getId(contexto)).getPreco());
+    return ofertasSemana.get(getId(contexto));
+  }
     
   private int getId(FacesContext fc) {
-        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-        return Integer.parseInt(params.get("id"));
-    }
+    Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
+    return Integer.parseInt(params.get("id"));
+  }
   
+  public Produto getProdutoDetalhe() {
+    return produtoDetalhe;
+  }
+
+  public void setProdutoDetalhe(Produto produtoDetalhe) {
+    this.produtoDetalhe = produtoDetalhe;
+  }
 }

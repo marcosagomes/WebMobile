@@ -22,14 +22,14 @@
                 <br/>
                 <h:form prependId="false">
                     <div class="ui middle aligned massive animated list">
-                        <ui:repeat value="#{carrinhoBean.itens}" var="item" varStatus="status">
+                      <ui:repeat value="#{carrinhoBean.mapaKeys}" var="item" varStatus="status">
                             <div class="item">
 
                                 <div class="left floated content">
                                     <img class="ui left floated avatar image" 
                                          src="imagens/produtos/processadori7.jpg"/>
                                     <div class="content">
-                                        <h:outputText value="#{item.produto.nome}"/>
+                                      <h:outputText value="#{item.nome}"/>
                                     </div>
                                 </div>
 
@@ -38,7 +38,7 @@
                                               value="Detalhes" 
                                               outcome="detalhe.xhtml"
                                               icon="fa fa-fw fa-list-alt">
-                                        <f:param name="id" value="#{item.produto.id}"/>
+                                        <f:param name="id" value="#{item.id}"/>
                                     </p:button>
 
                                     <p:commandButton styleClass="ui button inverted red"
@@ -57,18 +57,18 @@
                         <div class="column">
 
                             <h3> <h:outputLabel value="Total: "/> 
-                                <h:outputText id="valorTotal" value="#{carrinhoBean.precoTotoal}">
+                                <h:outputText id="valorTotal" value="#{carrinhoBean.precoTotal}">
                                     <f:convertNumber type="currency" locale="pt_BR" />
                                 </h:outputText> </h3>
                             </div>
                         <div class="column">                           
-                                <p:commandButton class="ui teal button"
-                                                 value="Continuar compra" 
+                                <p:commandButton class="ui yellow button"
+                                                 value="Limpar carrinho" 
                                                  action="#{carrinhoBean.finalizarCompra()}"                                                 
-                                                 icon="fa fa-fw fa-shopping-cart" ajax="false">
+                                                 icon="fa fa-fw fa-eraser" ajax="false">
                                 </p:commandButton>
                                 <p:button styleClass="ui button inverted blue"
-                                              value="Continuar compra Teste" 
+                                              value="(Teste) Continuar compra" 
                                               outcome="compra_endereco.xhtml"
                                               icon="fa fa-fw fa-list-alt">
                                     </p:button>
