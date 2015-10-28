@@ -17,6 +17,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
+import javax.faces.event.ValueChangeEvent;
 
 /**
  *
@@ -27,7 +29,8 @@ import javax.faces.context.FacesContext;
 public class CarrinhoBean implements Serializable {
 
     private ArrayList<ProdutoCarrinho> itens;
-    private HashMap<Produto, ProdutoCarrinho> mapaItens;
+    private HashMap<Produto, ProdutoCarrinho> itensMap;
+    private int quantidadeItensMap;
 
     @ManagedProperty(value = "#{produtoBean}")
     private ProdutoBean produtoBean;
@@ -38,7 +41,8 @@ public class CarrinhoBean implements Serializable {
 
     public CarrinhoBean() {
         this.itens = new ArrayList();
-        this.mapaItens = new HashMap<>();
+        this.itensMap = new HashMap<>();
+        this.quantidadeItensMap = 0;
     }
 
     public ArrayList<ProdutoCarrinho> getItens() {
@@ -46,68 +50,93 @@ public class CarrinhoBean implements Serializable {
     }
 
     public void adicionar(Produto produto) {
-      System.out.println("MARCOLA ZOEIRO 2");
-      ProdutoCarrinho pc = this.mapaItens.get(produto);
+      System.out.println("Adicionando o produto "+produto.getNome()+" ao carrinho...");
+      ProdutoCarrinho pc = this.itensMap.get(produto);
       
       if (pc == null) {
-          this.mapaItens.put(produto, new ProdutoCarrinho(produto, new Date()));
+          this.itensMap.put(produto, new ProdutoCarrinho(produto, new Date()));
       } else {
         pc.setQuantidade(pc.getQuantidade()+1);
       }
-        
-      for (Produto item : this.mapaItens.keySet()) {
-        
-        System.out.println("ITEM: "+item.getNome());
-        
-      }
+      this.quantidadeItensMap++;
       
-    }
-
-    public void adicionar(Produto produto, int quantidade) {
-      System.out.println("Adicionando "+quantidade+" prod...");
-        ProdutoCarrinho pc = new ProdutoCarrinho(produto, new Date(), quantidade);
-        this.itens.add(pc);
     }
     
+    // TODO
     public void adicionarDetalhe() {
-      System.out.println("Adiciona detalhe...");
+      System.out.println("Adicionando pela tela de detalhe...");
       
-      List<Produto> lista = this.produtoBean.getOfertasSemana();
-      
-      for (Produto p : lista) {
-        System.out.println("p: "+p.getNome());
-      }
+//      List<Produto> lista = this.produtoBean.getOfertasSemana();
+//      for (Produto p : lista) {
+//        System.out.println("p: "+p.getNome());
+//      }
       
       Produto prod = this.produtoBean.getProdutoDetalhe();
+      this.adicionar(prod);
       
-      ProdutoCarrinho p = new ProdutoCarrinho(prod, new Date());
-      this.itens.add(p);
+//      ProdutoCarrinho p = new ProdutoCarrinho(prod, new Date());
+//      this.itens.add(p);
       
     }
 
     public boolean removerProduto(Produto produto) {
-        System.out.println("Removendo " + produto.getNome());
-        return this.itens.remove(produto);
+      ProdutoCarrinho pc = this.itensMap.get(produto);
+      
+      if (pc != null) {
+        System.out.println(produto.getNome()+" foi removido com sucesso.");
+        this.quantidadeItensMap-=pc.getQuantidade();
+        this.itensMap.remove(produto);
+        return true;
+      }
+      System.out.println("Erro ao tentar remover "+produto.getNome());
+        
+      return false;
     }
 
-    public void removerProdutoNoIndice(int index) {
-        System.out.println("Removendo " + this.itens.get(index).getProduto().getNome());
-        this.itens.remove(index);
-        this.animarCarrinho();
+//    public void removerProdutoNoIndice(int index) {
+//        System.out.println("Removendo " + this.itens.get(index).getProduto().getNome());
+//        this.itens.remove(index);
+//        this.animarCarrinho();
+//
+//    }
 
+//    public void setQuantidadeProduto(Produto produto, int quantidade) {
+////        this.itens.get(this.itens.indexOf(produto)).setQuantidade(quantidade);
+////        ProdutoCarrinho pc = this.getProdutoCarrinhoFromMap(itensMap, produto);
+//      ProdutoCarrinho pc = this.itensMap.get(produto);
+//      if (pc != null) {
+//        System.out.println("PC GETQTD: "+pc.getQuantidade()+" // QTDITENSMAP "+this.quantidadeItensMap);
+//        int aux = this.quantidadeItensMap - pc.getQuantidade();
+//        System.out.println("AUX: "+aux);
+//        aux += quantidade;
+//        System.out.println("AUX: "+aux);
+//        System.out.println("PC GETQTD: "+pc.getQuantidade()+" // QTDITENSMAP "+this.quantidadeItensMap);
+//      } else {
+//        System.out.println("null asdifjbasdf");
+//      }
+//    }
+    
+    public void handleChange(ValueChangeEvent event){  
+      System.out.println("here "+event);
+      this.quantidadeItensMap -= Integer.parseInt(event.getOldValue().toString());
+      this.quantidadeItensMap += Integer.parseInt(event.getNewValue().toString());
+    }
+    
+    public int getQuantidadeProduto(Produto produto, int quantidade){
+      ProdutoCarrinho pc = this.itensMap.get(produto);
+      return pc.getQuantidade();
     }
 
-    public void alterarQuantidade(ProdutoCarrinho produto, int quantidade) {
-        this.itens.get(this.itens.indexOf(produto)).setQuantidade(quantidade);
-    }
-
-    public void alterarQuantidade(int indexProduto, int quantidade) {
-        this.itens.get(indexProduto).setQuantidade(quantidade);
-    }
+//    public void alterarQuantidade(int indexProduto, int quantidade) {
+//        this.itens.get(indexProduto).setQuantidade(quantidade);
+//    }
 
     public void limparCarrinho() {
-        this.itens.clear();
-        this.itens = new ArrayList<>();
+//        this.itens.clear();
+//        this.itens = new ArrayList<>();
+        this.itensMap.clear();
+        this.itensMap = new HashMap<>();
+        this.quantidadeItensMap = 0;
         System.out.println("O carrinho foi limpo!");
     }
 
@@ -116,27 +145,28 @@ public class CarrinhoBean implements Serializable {
     }
 
     public void animarCarrinho() {
-        String script = "animacaoAdicionouItens(" + itens.size() + ")";
+        String script = "animacaoAdicionouItens(" + this.quantidadeItensMap + ")";
         FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add(script);
     }
 
     public void imprimirCarrinho() {
-        System.out.println("Carrinho de compras:");
-        for (ProdutoCarrinho item : itens) {
-            System.out.println("-> " + item.getProduto().getNome());
-        }
-        System.out.println("--------------------");
+      System.out.println("Carrinho de compras:");
+      for (Produto item : this.itensMap.keySet()) {
+        System.out.println("ITEM: "+item.getNome());
+      }
+      System.out.println("--------------------");
     }
 
     public String finalizarCompra() {
-        this.itens = new ArrayList<>();
+//        this.itens = new ArrayList<>();
+        this.itensMap = new HashMap<>();
         return "/carrinho.xhtml";
     }
 
     public float calcularPrecoCarrinho() {
         float valor = 0;
 
-        for (ProdutoCarrinho pc : this.getItens()) {
+        for (ProdutoCarrinho pc : this.getItensMapValues()) {
             valor += pc.getProduto().getPreco() * pc.getQuantidade();
         }
 
@@ -146,31 +176,51 @@ public class CarrinhoBean implements Serializable {
   public ProdutoBean getProdutoBean() {
     return produtoBean;
   }
-
   public void setProdutoBean(ProdutoBean produtoBean) {
     this.produtoBean = produtoBean;
   }
 
-  public HashMap<Produto, ProdutoCarrinho> getMapaItens() {
-    return mapaItens;
+  public HashMap<Produto, ProdutoCarrinho> getItensMap() {
+    return itensMap;
   }
 
-  public void setMapaItens(HashMap<Produto, ProdutoCarrinho> mapaItens) {
-    this.mapaItens = mapaItens;
+  public void setItensMap(HashMap<Produto, ProdutoCarrinho> mapaItens) {
+    this.itensMap = mapaItens;
+    this.quantidadeItensMap = this.itensMapRecount(mapaItens);
   }
-  
-//  public List<Map.Entry<Produto, ProdutoCarrinho>> getMapaItensEntrySet() {
-//    List<Map.Entry<Produto, ProdutoCarrinho>> list = new ArrayList<>();
-//    list.addAll(this.mapaItens.entrySet());
-//    return list;
-//  }
     
-  public List<Produto> getMapaKeys(){
-    return new ArrayList<>(this.mapaItens.keySet());
+  public List<Produto> getItensMapKeys(){
+    return new ArrayList<>(this.itensMap.keySet());
   }
   
-  public List<ProdutoCarrinho> getMapaValues(){
-    return new ArrayList<>(this.mapaItens.values());
+  public List<ProdutoCarrinho> getItensMapValues(){
+    return new ArrayList<>(this.itensMap.values());
+  }
+
+  public int getQuantidadeItensMap() {
+    return quantidadeItensMap;
+  }
+
+  public void setQuantidadeItensMap(int quantidadeItensMap) {
+    this.quantidadeItensMap = quantidadeItensMap;
+    this.animarCarrinho();
+  }
+  
+  private ProdutoCarrinho getProdutoCarrinhoFromMap(Map<Produto, ProdutoCarrinho> hm, ProdutoCarrinho value) {
+    for (Produto o : hm.keySet()) {
+      if (hm.get(o).equals(value)) {
+        return hm.get(o);
+      }
+    }
+    return null;
+  }
+  
+  public int itensMapRecount(HashMap<Produto, ProdutoCarrinho> mapaItens){
+    int soma = 0;
+    for (ProdutoCarrinho pc : mapaItens.values()){
+      soma+=pc.getQuantidade();
+    }
+    return soma;
   }
   
 }

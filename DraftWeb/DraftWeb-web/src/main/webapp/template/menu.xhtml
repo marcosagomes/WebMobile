@@ -82,8 +82,8 @@
                                         <!--Label da quantidade de itens adicionados ao carrinho-->
                                         <h:panelGroup layout="block" 
                                                       id="labelCarrinho" 
-                                                      styleClass="ui label #{carrinhoBean.itens.size() == 0 ? 'hidden' : ''} ">
-                                            #{carrinhoBean.itens.size()}
+                                                      styleClass="ui label #{carrinhoBean.quantidadeItensMap == 0 ? 'hidden' : ''} ">
+                                            #{carrinhoBean.quantidadeItensMap}
                                         </h:panelGroup>
                                     </div>
                                 </h:outputLink>

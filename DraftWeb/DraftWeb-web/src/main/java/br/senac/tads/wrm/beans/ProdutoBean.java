@@ -12,7 +12,6 @@ import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
 
 /**
  *
@@ -73,10 +72,7 @@ public class ProdutoBean implements Serializable{
   
   public String carregarDetalhes(){
     this.produtoDetalhe = this.getProduto();
-    
-    System.out.println("NOMEEEEE: "+this.produtoDetalhe.getNome());
-    
-    return "/detalhe.xhtml";
+    return "detalhe";
   }
 
   public ArrayList<Produto> getOfertasSemana() {
@@ -85,7 +81,6 @@ public class ProdutoBean implements Serializable{
   
   public Produto getProduto() {
     FacesContext contexto = FacesContext.getCurrentInstance();
-    System.out.println("Produto id "+ofertasSemana.get(getId(contexto)).getId()+"//"+ofertasSemana.get(getId(contexto)).getPreco());
     return ofertasSemana.get(getId(contexto));
   }
     

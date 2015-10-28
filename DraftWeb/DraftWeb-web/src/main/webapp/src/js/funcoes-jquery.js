@@ -18,6 +18,12 @@ $(function () { // Abreviação para $(document).ready(function() { ... });
                 .modal('show')
                 ;
     });
+//    $('.qtdSpinner').change(function() { 
+//      console.log('estamos aquiiuavscgv ik');
+//        var qtd = $(this).val(); // get the current value of the input field.
+//        animacaoAdicionouItens(qtd);
+//        animacaoMobile(qtd);
+//    });
 //    Quando clicar no carrinho fazer uma animacao
     $('.addCarrinho').click(function () {
         $(this).blur();
