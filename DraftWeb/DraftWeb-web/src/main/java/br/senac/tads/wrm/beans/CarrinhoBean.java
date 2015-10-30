@@ -17,7 +17,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.ValueChangeEvent;
 
 /**
@@ -36,7 +35,10 @@ public class CarrinhoBean implements Serializable {
     private ProdutoBean produtoBean;
     
     public float getPrecoTotal() {
+      float preco = calcularPrecoCarrinho();
+      if (preco < 0)
         return calcularPrecoCarrinho();
+      return preco;
     }
 
     public CarrinhoBean() {
@@ -117,9 +119,10 @@ public class CarrinhoBean implements Serializable {
 //    }
     
     public void handleChange(ValueChangeEvent event){  
-      System.out.println("here "+event);
-      this.quantidadeItensMap -= Integer.parseInt(event.getOldValue().toString());
-      this.quantidadeItensMap += Integer.parseInt(event.getNewValue().toString());
+      if (Integer.parseInt(event.getNewValue().toString())>0){
+        this.quantidadeItensMap -= Integer.parseInt(event.getOldValue().toString());
+        this.quantidadeItensMap += Integer.parseInt(event.getNewValue().toString());
+      }
     }
     
     public int getQuantidadeProduto(Produto produto, int quantidade){
@@ -167,7 +170,10 @@ public class CarrinhoBean implements Serializable {
         float valor = 0;
 
         for (ProdutoCarrinho pc : this.getItensMapValues()) {
-            valor += pc.getProduto().getPreco() * pc.getQuantidade();
+          if (pc.getQuantidade() < 1)
+            return -1;
+          
+          valor += pc.getProduto().getPreco() * pc.getQuantidade();
         }
 
         return valor;
