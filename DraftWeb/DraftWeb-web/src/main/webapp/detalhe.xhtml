@@ -24,7 +24,7 @@
                 <div class="ui centered aligned image medium">
                   <div class="ui slider-wrapper theme-default slids">
                     <div id="slider" class="nivoSlider">
-                      <img src="imagens/produtos/processadori7.jpg"/>
+                      <img src="imagens/produtos/notFound.png"/>
                     </div>    
                   </div>
                 </div>
@@ -35,21 +35,21 @@
                 <div class="ui basic center aligned segment">
                   <!--<h3 class="header"> Processador Intel Core i7 3770 (BX80637I73770) 3° Geração</h3>-->
                   <h3 class="header">
-                    <h:outputText value="#{produtoBean.produto.nome}"/>
+                    <h:outputText value="#{produtoBean.produto.modelo}"/>
                   </h3>
                 </div>
 
                 <div class="ui tiny statistic">
                   <i> De  
                     <strike> 
-                      <h:outputText value="#{produtoBean.produto.precoAnterior}">
+                      <h:outputText value="#{produtoBean.produto.precoVenda}">
                         <f:convertNumber type="currency" locale="pt_BR" currencySymbol=""/>
                       </h:outputText> 
                     </strike> 
                     por
                   </i> 
                   <div class="value">
-                    <strong> <h:outputText value="#{produtoBean.produto.preco}">
+                    <strong> <h:outputText value="#{produtoBean.produto.precoVenda}">
                         <f:convertNumber type="currency" locale="pt_BR" currencySymbol=""/>
                       </h:outputText> </strong>
                   </div> 
@@ -83,45 +83,12 @@
 
         <div class="ui tabular menu">
           <div class="item active" data-tab="tab-name">Especificações</div>
-          <div class="item" data-tab="tab-name2">Opiniões</div>
+          <!--<div class="item" data-tab="tab-name2">Opiniões</div>-->
         </div>
 
         <div class="ui tab active" data-tab="tab-name">
           <div class="ui basic segment center aligned">
             <h:outputText value="#{produtoBean.produto.descricao}" escape="false"/>
-            <!--<p>--> 
-            <!--              - Marca: Intel <br/>
-                          - Modelo:  BX80637I73770 <br/>
-                          - Tipo: CPU / Microprocessador <br/>
-                          - Família: Intel Core i7 <br/>
-                          - Número do modelo: i7-3770 <br/>
-                          - Frequência: 3400 MHz <br/>
-                          - Freqüência Turbo: 3900 MHz <br/>
-                          - Multiplicador de clock: 34 <br/>
-                          - Pacote: 1155 terra-Flip-Chip Land Grid Array <br/>
-                          - Soquete: 1155 (soquete H2) <br/>
-                          - Microarquitetura: Ivy Bridge<br/>
-                          - Núcleo do processador: Ivy Bridge <br/>
-                          - Processo de fabricação: 0,022 micron <br/>
-                          - Largura de dados: 64 bits<br/>
-                          - 4x núcleos <br/>
-                          - 8x threads <br/>
-                          - Unidade de Ponto Flutuante: Integrado <br/>
-                          - Nível tamanho do cache de um: 4 x 32 KB cache de instrução  <br/>
-                          - 4 x 32 caches de dados KB <br/>
-                          - Nível tamanho do cache de 2: 4 x 256 KB <br/>
-                          - Nível tamanho do cache de 3: 8 MB de cache compartilhado <br/>
-                          - Multiprocessamento: Uniprocessor <br/>
-                          - Dual-channel controlador de memória DDR3 <br/>
-                          - Interface: PCI Express 3.0 <br/>
-                          - HD 4000 controlador de gráficos <br/>
-                          - Parâmetros elétricos / térmica: Thermal Design Power: 77 Watt </p>
-                        <p>
-                          <strong>ATENÇÃO! </strong> Verifique se sua placa-mãe suporta a terceira geração de processadores da Intel (Ivy Bridge).<br/>
-                          Para o funcionamento correto dos novos processadores Ivy Bridge (3º geração da Intel), é altamente recomendável <br/>
-                          a atualização da BIOS para a mais nova versão. Para tal procedimento, é necessário que um técnico de sua confiança o faça. <br/>
-                          Qualquer erro na atualização por falta de conhecimento técnico, poderá ocasionar a perda irreversível da placa mãe. 
-                        </p>-->
           </div>
         </div>
         <div class="ui tab" data-tab="tab-name2">

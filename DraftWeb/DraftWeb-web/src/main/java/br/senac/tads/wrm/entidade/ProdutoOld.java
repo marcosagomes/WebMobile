@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author ramonhonorio
  */
-public class Produto implements Serializable {
+public class ProdutoOld implements Serializable {
   
   // Identificador
   private int id;
@@ -29,7 +29,7 @@ public class Produto implements Serializable {
   /* 
     Construtor da classe
   */
-  public Produto(int id, String nome, String descricao, float preco) {
+  public ProdutoOld(int id, String nome, String descricao, float preco) {
     this.id = id;
     this.nome = nome;
     this.descricao = descricao;
@@ -37,7 +37,7 @@ public class Produto implements Serializable {
     this.precoAnterior = preco;
   }
 
-  public Produto(int id, String nome, String categoria, float preco, float precoAnterior) {
+  public ProdutoOld(int id, String nome, String categoria, float preco, float precoAnterior) {
     this.id = id;
     this.nome = nome;
     this.categoria = categoria;

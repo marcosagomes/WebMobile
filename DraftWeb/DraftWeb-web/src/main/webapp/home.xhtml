@@ -42,12 +42,13 @@
                                              value="Ver mais detalhes"
                                              styleClass="ui primary button"
                                              ajax="false">
-                              <f:param name="id" value="#{item.id}" />
+                            <f:param name="id" value="#{item.idProduto}" />
                           </p:commandLink>
                         </div>
                       </div>
                     </div>
-                    <img src="imagens/produtos/processadori7.jpg"/>
+                    <!--<img src="imagens/produtos/notFound.png"/>-->
+                    <img src="#{item.caminhoImagem}" alt="Imagem do produto"/>
                   </div>
 
                   <!--Meta dados-->
@@ -64,22 +65,22 @@
                     <!--Titulo-->
                     <!--<a class="header">Processador Intel Core i7 3770 3° Geração</a>-->
                     <h:outputLink class="header" value="">
-                      <f:param name="id" value="#{item.id}"/>
-                      #{item.nome}
+                      <f:param name="id" value="#{item.idProduto}"/>
+                      #{item.modelo}
                     </h:outputLink>
                     <br/>
 
                     <!--Preco-->
                     <div class="text center aligned">
                       <div class="ui tiny horizontal statistic">
-                        De <h:outputText value="#{item.precoAnterior}">
+                        De <h:outputText value="#{item.precoVenda}">
                           <f:convertNumber type="currency" locale="pt_BR" currencySymbol=""/>
                         </h:outputText> por
                         <div class="label">
                           R$
                         </div>
                         <div class="value">
-                          <h:outputText value="#{item.preco}">
+                          <h:outputText value="#{item.precoVenda}">
                             <f:convertNumber type="currency" locale="pt_BR" currencySymbol=""/>
                           </h:outputText>
                         </div>

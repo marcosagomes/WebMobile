@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
  *
  * @author Marcos
  */
-@Table(name = "tb_cliente")
+@Table(name = "TB_CLIENTE")
 @Entity
 public class Cliente implements Serializable {
 
@@ -30,21 +30,36 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+@Column(length = 60, nullable = false)
     private String nome;
+@Column(length = 5, nullable = false)
     private String sexo;
+@Column(length = 15, nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dtNascimento;
+@Column(length = 15, nullable = false)
     private String cpf;
+@Column(length = 15, nullable = false)
     private String rg;
+@Column(length = 11, nullable = false)
     private String telefone;
+@Column(length = 12, nullable = false)
     private String celular;
+@Column(length = 40, nullable = false)
     private String senha;
+@Column(length = 10, nullable = false)
     private int cep;
+@Column(length = 60, nullable = false)
     private String rua;
+@Column(length = 30, nullable = false)
     private String estado;
+@Column(length = 30, nullable = false)
     private String cidade;
+@Column(length = 30, nullable = false)
     private String bairro;
+@Column(length = 10, nullable = false)
     private int numero;
+@Column(length = 12, nullable = false)
     private char complemento;
 
     public Cliente() {
@@ -68,7 +83,6 @@ public class Cliente implements Serializable {
         this.complemento = complemento;
     }
 
-    @Column(length = 60, nullable = false)
     public String getNome() {
         return nome;
     }
@@ -77,7 +91,6 @@ public class Cliente implements Serializable {
         this.nome = nome;
     }
 
-    @Column(length = 5, nullable = false)
     public String getSexo() {
         return sexo;
     }
@@ -86,7 +99,6 @@ public class Cliente implements Serializable {
         this.sexo = sexo;
     }
 
-    @Column(length = 15, nullable = false)
     public Date getDtNascimento() {
         return dtNascimento;
     }
@@ -95,7 +107,6 @@ public class Cliente implements Serializable {
         this.dtNascimento = dtNascimento;
     }
 
-    @Column(length = 15, nullable = false)
     public String getCpf() {
         return cpf;
     }
@@ -104,7 +115,6 @@ public class Cliente implements Serializable {
         this.cpf = cpf;
     }
 
-    @Column(length = 15, nullable = false)
     public String getRg() {
         return rg;
     }
@@ -113,7 +123,6 @@ public class Cliente implements Serializable {
         this.rg = rg;
     }
 
-    @Column(length = 11, nullable = false)
     public String getTelefone() {
         return telefone;
     }
@@ -122,7 +131,6 @@ public class Cliente implements Serializable {
         this.telefone = telefone;
     }
 
-    @Column(length = 12, nullable = false)
     public String getCelular() {
         return celular;
     }
@@ -131,7 +139,6 @@ public class Cliente implements Serializable {
         this.celular = celular;
     }
 
-    @Column(length = 40, nullable = false)
     public String getSenha() {
         return senha;
     }
@@ -140,7 +147,6 @@ public class Cliente implements Serializable {
         this.senha = senha;
     }
 
-    @Column(length = 10, nullable = false)
     public int getCep() {
         return cep;
     }
@@ -149,7 +155,6 @@ public class Cliente implements Serializable {
         this.cep = cep;
     }
 
-    @Column(length = 60, nullable = false)
     public String getRua() {
         return rua;
     }
@@ -158,7 +163,6 @@ public class Cliente implements Serializable {
         this.rua = rua;
     }
 
-    @Column(length = 30, nullable = false)
     public String getEstado() {
         return estado;
     }
@@ -167,7 +171,6 @@ public class Cliente implements Serializable {
         this.estado = estado;
     }
 
-    @Column(length = 30, nullable = false)
     public String getCidade() {
         return cidade;
     }
@@ -176,7 +179,6 @@ public class Cliente implements Serializable {
         this.cidade = cidade;
     }
 
-    @Column(length = 30, nullable = false)
     public String getBairro() {
         return bairro;
     }
@@ -185,7 +187,6 @@ public class Cliente implements Serializable {
         this.bairro = bairro;
     }
 
-    @Column(length = 10, nullable = false)
     public int getNumero() {
         return numero;
     }
@@ -194,7 +195,6 @@ public class Cliente implements Serializable {
         this.numero = numero;
     }
 
-    @Column(length = 12, nullable = false)
     public char getComplemento() {
         return complemento;
     }
@@ -203,7 +203,6 @@ public class Cliente implements Serializable {
         this.complemento = complemento;
     }
 
-    @Id
     public Long getId() {
         return id;
     }

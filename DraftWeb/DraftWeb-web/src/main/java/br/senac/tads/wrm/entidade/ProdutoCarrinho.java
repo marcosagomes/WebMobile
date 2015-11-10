@@ -5,6 +5,7 @@
  */
 package br.senac.tads.wrm.entidade;
 
+import com.wrm.draftstore.common.entidades.Produto;
 import java.io.Serializable;
 import java.util.Date;
 

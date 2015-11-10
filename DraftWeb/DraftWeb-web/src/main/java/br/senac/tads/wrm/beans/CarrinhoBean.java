@@ -5,8 +5,9 @@
  */
 package br.senac.tads.wrm.beans;
 
-import br.senac.tads.wrm.entidade.Produto;
+import br.senac.tads.wrm.entidade.ProdutoOld;
 import br.senac.tads.wrm.entidade.ProdutoCarrinho;
+import com.wrm.draftstore.common.entidades.Produto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,6 +31,23 @@ public class CarrinhoBean implements Serializable {
     private ArrayList<ProdutoCarrinho> itens;
     private HashMap<Produto, ProdutoCarrinho> itensMap;
     private int quantidadeItensMap;
+    
+    
+      private String stringTeste;
+
+  public String getStringTeste() {
+    return stringTeste;
+  }
+
+  public void setStringTeste(String stringTeste) {
+    this.stringTeste = stringTeste;
+    
+  }
+  
+  public void imprimir(){
+    System.out.println("===========\n"+this.stringTeste+"\n==========");
+  }
+
 
     @ManagedProperty(value = "#{produtoBean}")
     private ProdutoBean produtoBean;
@@ -52,7 +70,7 @@ public class CarrinhoBean implements Serializable {
     }
 
     public void adicionar(Produto produto) {
-      System.out.println("Adicionando o produto "+produto.getNome()+" ao carrinho...");
+      System.out.println("Adicionando o produto "+produto.getModelo()+" ao carrinho...");
       ProdutoCarrinho pc = this.itensMap.get(produto);
       
       if (pc == null) {
@@ -69,7 +87,7 @@ public class CarrinhoBean implements Serializable {
       System.out.println("Adicionando pela tela de detalhe...");
       
 //      List<Produto> lista = this.produtoBean.getOfertasSemana();
-//      for (Produto p : lista) {
+//      for (ProdutoOld p : lista) {
 //        System.out.println("p: "+p.getNome());
 //      }
       
@@ -85,12 +103,12 @@ public class CarrinhoBean implements Serializable {
       ProdutoCarrinho pc = this.itensMap.get(produto);
       
       if (pc != null) {
-        System.out.println(produto.getNome()+" foi removido com sucesso.");
+        System.out.println(produto.getModelo()+" foi removido com sucesso.");
         this.quantidadeItensMap-=pc.getQuantidade();
         this.itensMap.remove(produto);
         return true;
       }
-      System.out.println("Erro ao tentar remover "+produto.getNome());
+      System.out.println("Erro ao tentar remover "+produto.getModelo());
         
       return false;
     }
@@ -102,7 +120,7 @@ public class CarrinhoBean implements Serializable {
 //
 //    }
 
-//    public void setQuantidadeProduto(Produto produto, int quantidade) {
+//    public void setQuantidadeProduto(ProdutoOld produto, int quantidade) {
 ////        this.itens.get(this.itens.indexOf(produto)).setQuantidade(quantidade);
 ////        ProdutoCarrinho pc = this.getProdutoCarrinhoFromMap(itensMap, produto);
 //      ProdutoCarrinho pc = this.itensMap.get(produto);
@@ -155,7 +173,7 @@ public class CarrinhoBean implements Serializable {
     public void imprimirCarrinho() {
       System.out.println("Carrinho de compras:");
       for (Produto item : this.itensMap.keySet()) {
-        System.out.println("ITEM: "+item.getNome());
+        System.out.println("ITEM: "+item.getModelo());
       }
       System.out.println("--------------------");
     }
@@ -173,7 +191,7 @@ public class CarrinhoBean implements Serializable {
           if (pc.getQuantidade() < 1)
             return -1;
           
-          valor += pc.getProduto().getPreco() * pc.getQuantidade();
+          valor += pc.getProduto().getCusto().floatValue() * pc.getQuantidade();
         }
 
         return valor;

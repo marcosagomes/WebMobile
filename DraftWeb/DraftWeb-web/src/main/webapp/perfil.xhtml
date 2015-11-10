@@ -3,14 +3,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <ui:composition template="template/modelo.xhtml"> 
         <ui:define name="content">
-            <div class="container">
-                <h2 class="ui block header">
-                    <i class="settings icon"></i>
-                    Sua Conta
-                </h2>
+<!--            <div class="container">
+                <div class="ui block header">
+                    <i class="left floated settings icon"></i>
+                    Minha conta
+                    <button class="ui right floated button">Right Floated</button>
+                </div>
+            </div>-->
+            <div class="ui clearing segment">
+            <h2 class="ui header left floated">
+              <i class="settings icon"></i>
+              <div class="content">
+                Minha conta
+              </div>
+            </h2>
+              
+<!--              <div class="ui right floated button">
+                Logout
+              </div>-->
+            <h:form>
+              <p:commandButton action="#{usuarioBean.doLogout()}"
+                               value="Sair" 
+                               styleClass="ui right floated icon button inverted red"
+                               icon="fa fa-fw fa-shopping-cart"/>
+            </h:form>
+<!--            <button class="ui right floated labeled icon button inverted red">
+              <i class="sign out icon"></i>
+              Sair
+            </button>-->
             </div>
             <div class="ui segment">
 
